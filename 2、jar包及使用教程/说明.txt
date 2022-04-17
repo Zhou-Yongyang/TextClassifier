@@ -1,0 +1,19 @@
+2021/12/25 周永扬
+语料库下载：http://thuctc.thunlp.org/ 
+THUCNews.zip 1.56GB 下载解压
+工具使用（拥有jdk）：
+设 包 1.jar 放置于 路径 x 下，解压后的语料库根目录为 y， 模型输出目录为 z，最大特征数量约束为 max，训练集比例 ratio
+cmd 到 x
+java -jar 1.jar y z max ratio 即可
+记得运行完毕后记录
+
+例如：
+java -jar 1.jar G:\语料库\THUCNews\THUCNews D:\\project_file\\NLP\\TextClassifier\\model\\model.txt 10000 0.8
+即：语料库在 G:\语料库\THUCNews\THUCNews
+输出模型到：D:\\project_file\\NLP\\TextClassifier\\model\\model.txt
+最大特征提取数目为：10000
+训练集比例为 80%： 0.8
+
+需要记录：总的特征数目，挑选的特征数目，最终的输出信息（各个类比的情况以及最终的宏平均，微平均）分析不同训练量，不同特征数目下对最终结果的影响
+跑的可能比较慢，如果提示 heap space 去尝试调整 jvm 参数
+所有的需要记录的信息都会打印在控制台上
